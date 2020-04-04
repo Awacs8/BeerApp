@@ -6,7 +6,6 @@ const Beer=({beer, setWishlist})=>{
     // const [checked,setChecked]=useState(false);
     // const [more,setMore]=useState(false)
     
-
     const Wish=()=>{
         setWishlist(wishlist2=>[...wishlist2, beer])
     }  

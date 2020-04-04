@@ -8,14 +8,13 @@ const Pagination=({paginate,totalItems,itemsPerPage})=>{
     }
     return(
         <nav>
-            <ul className="pagination">
+            <div className="pagination">
                 {pageNumbers.map(number=>
-                    <li key={number} className="pagination"><a href="#" onClick={()=>paginate(number)}>
+                    <button key={number} className="pagination" onClick={()=>paginate(number)}>
                         {number}
-                        </a>
-                    </li>
+                    </button>
                 )}
-            </ul>
+            </div>
         </nav>
     )
 

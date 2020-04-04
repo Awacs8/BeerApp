@@ -31,7 +31,7 @@ const paginate=(pageNumber)=>{
         <LogOut />
       </li>
       <li className="nav-item">
-        <Link  to="welcome">Home</Link>
+        <Link  to="main">Home</Link>
       </li>
       <li className="nav-item">
         <Link to="/wishlist">Wishlist</Link>
