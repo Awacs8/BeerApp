@@ -24,7 +24,6 @@ function App() {
     <Router>
       <Header/>
       <Switch>
-        
         <PublicRoute component={Register} path="/register"/>
         <PublicRoute component={LogIn} path="/login"/>
         <PrivateRoute component = {Main} setWishlist={setWishlist} path="/main"/>
@@ -33,7 +32,6 @@ function App() {
         <PrivateRoute component={Profile} path="/profile"/>
         <PrivateRoute component={LogOut} path="/logout"/>
         <PublicRoute component = {Home} path="/" />
-        
       </Switch>
     </Router>
     </>
