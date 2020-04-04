@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './layout/public/components/Header';
 import Home from './layout/public/components/Home';
@@ -24,7 +24,6 @@ function App() {
     <Router>
       <Header/>
       <Switch>
-        <PublicRoute component = {Home} exact path="/" />
         <PublicRoute component={Register} path="/register"/>
         <PublicRoute component={LogIn} path="/login"/>
         <PrivateRoute component = {Main} setWishlist={setWishlist} path="/main"/>
@@ -32,7 +31,7 @@ function App() {
         <PrivateRoute component={Wishlist} wishlist2={wishlist2} path="/wishlist"/>
         <PrivateRoute component={Profile} path="/profile"/>
         <PrivateRoute component={LogOut} path="/logout"/>
-        <Redirect from="/" to="/main"/> 
+        <PublicRoute component = {Home} path="/" />
       </Switch>
     </Router>
     </>
