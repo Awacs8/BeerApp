@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import Header from './layout/public/components/Header';
 import Home from './layout/public/components/Home';
@@ -33,6 +33,7 @@ function App() {
         <PrivateRoute component={Profile} path="/profile"/>
         <PrivateRoute component={LogOut} path="/logout"/>
         <PublicRoute component = {Home} path="/" />
+        <Redirect from="/" to="/main" />
        
       </Switch>
     </Router>
