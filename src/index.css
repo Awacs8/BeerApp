@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-image: url('https://wallsdesk.com/wp-content/uploads/2016/10/Beer-HD-Wallpaper.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: darkorange;
+  background-size: cover;
+  position: relative;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
