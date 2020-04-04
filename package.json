@@ -1,6 +1,6 @@
 {
-  "name": "projekat",
-  "homepage": "https://Awacs8.github.io/projekat",
+  "homepage": "http://Awacs8.github.io/beerapp",
+  "name": "beerapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
