@@ -14,10 +14,10 @@ import Profile from './layout/private/components/Profile';
 import Wishlist from './layout/private/components/Wishlist';
 
 function App() {
-  const [wishlist2, setWishlist] = useState([]);
+  const [ wishlist,setWishlist] = useState([]);
   useEffect(() => {
-    console.log(wishlist2);
-  }, [wishlist2])
+    console.log(wishlist);
+  }, [wishlist])
   
   return (
     <>
@@ -29,7 +29,7 @@ function App() {
         <PublicRoute component={LogIn} path="/login"/>
         <PrivateRoute component = {Main} setWishlist={setWishlist} path="/main"/>
         <PrivateRoute component = {Search} path="/search"/>
-        <PrivateRoute component={Wishlist} wishlist2={wishlist2} path="/wishlist"/>
+        <PrivateRoute component={Wishlist} wishlist={wishlist} path="/wishlist"/>
         <PrivateRoute component={Profile} path="/profile"/>
         <PrivateRoute component={LogOut} path="/logout"/>
         <PublicRoute component = {Home} path="/" />

@@ -7,7 +7,7 @@ const Beer=({beer, setWishlist})=>{
     // const [more,setMore]=useState(false)
     
     const Wish=()=>{
-        setWishlist(wishlist2=>[...wishlist2, beer])
+        setWishlist(wishlist => [...wishlist, beer])
     }  
         
 
