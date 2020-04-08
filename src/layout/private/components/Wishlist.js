@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import '../../../utils/style.css';
 import Beer2 from './Beer2';
 
-const Wishlist=({wishlist})=>{
-    let filtered = [...new Set(wishlist)];
+const Wishlist=({wishlist2})=>{
+    let filtered = [...new Set(wishlist2)];
     
     return(
         <>

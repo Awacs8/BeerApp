@@ -24,14 +24,14 @@ const paginate=(pageNumber)=>{
   }
 
   return (
-    <>
+    <div className="main">
     <div>
     <ul className="nav-bar">
       <li>
         <LogOut />
       </li>
       <li className="nav-item">
-        <Link  to="main">Home</Link>
+        <Link  to="welcome">Home</Link>
       </li>
       <li className="nav-item">
         <Link to="/wishlist">Wishlist</Link>
@@ -50,7 +50,7 @@ const paginate=(pageNumber)=>{
         totalItems={beers.length} 
         itemsPerPage={itemsPerPage} 
       /> 
-    </>
+    </div>
   );  
 };
 

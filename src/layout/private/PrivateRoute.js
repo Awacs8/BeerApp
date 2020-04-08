@@ -5,11 +5,10 @@ import { isLogIn } from '../../services/auth_service';
 const PrivateRoute = ({component: Component, ...rest}) => { 
     // console.log('is login', isLogIn())
     return (
-      <Route {...rest} render={props => (
-        isLogIn() ?
-            <Component {...props} />
-        : <Redirect to="/login" />
-      )}/>
+        <Route>{isLogIn() ? 
+        <Component {...rest} /> : 
+        <Redirect to="/" />}
+        </Route>
       );
     };
 

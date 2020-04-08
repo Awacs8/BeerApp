@@ -21,8 +21,9 @@ const Search=()=>{
         setFindBeer(tmp)
         return
     }
+    
     return(
-        <>
+        <div className="search">
         <Link to="main" className="nav-item">Back to main</Link>
         <div >
             <h3 className="h3">Find a beer</h3>
@@ -32,7 +33,7 @@ const Search=()=>{
             {findBeer.map(beer=><Beer beer={beer} key={beer.id} />)}
             </div>
         </div>
-        </>
+        </div>
     )
 }
 export default Search;

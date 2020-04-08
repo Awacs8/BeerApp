@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import Header from './layout/public/components/Header';
 import Home from './layout/public/components/Home';
@@ -14,27 +14,25 @@ import Profile from './layout/private/components/Profile';
 import Wishlist from './layout/private/components/Wishlist';
 
 function App() {
-  const [ wishlist,setWishlist] = useState([]);
+  const [wishlist2, setWishlist] = useState([]);
   useEffect(() => {
-    console.log(wishlist);
-  }, [wishlist])
+    console.log(wishlist2);
+  }, [wishlist2])
   
   return (
     <>
     <Router>
       <Header/>
       <Switch>
-      
+        <PublicRoute component = {Home} exact path="/" />
         <PublicRoute component={Register} path="/register"/>
         <PublicRoute component={LogIn} path="/login"/>
         <PrivateRoute component = {Main} setWishlist={setWishlist} path="/main"/>
         <PrivateRoute component = {Search} path="/search"/>
-        <PrivateRoute component={Wishlist} wishlist={wishlist} path="/wishlist"/>
+        <PrivateRoute component={Wishlist} wishlist2={wishlist2} path="/wishlist"/>
         <PrivateRoute component={Profile} path="/profile"/>
         <PrivateRoute component={LogOut} path="/logout"/>
-        <PublicRoute component = {Home} path="/" />
-        <Redirect from="/" to="/main" />
-       
+        <Redirect from="/" to="/main"/> 
       </Switch>
     </Router>
     </>
