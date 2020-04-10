@@ -6,7 +6,7 @@ Na njoj se nalaze linkovi ka registracionoj i login formi. Ukoliko korisnik nema
 U suprotnom, pristupa login formi (SignIn).</br>
 Nakon registracije (komponenta Register.js) ili login-a (komponenta LogIn.js) korisnik moze pristupiti glavnoj stranici.</br>
 NAPOMENA: u formi za registraciju input polja ne smeju biti prazna; polje 'email' mora biti u formi abc@abc.bc;</br>
-unos u polja 'password' i 'confirm passwordd' mora biti isti.
+unos u polja 'password' i 'confirm password' mora biti isti.
 
 Na glavnoj stranici (komponenta Main.js), ispisuju se api podaci u vidu liste proizvoda (komponeta BeerList.js).
 Za svako pivo se prikazuju naziv, tagline, abv, ibu i uparivanje sa hranom.</br>
@@ -25,5 +25,7 @@ Komponente su podeljene u 2 grupe:</br>
 Public - moze im pristupiti bilo ko.</br>
 Private - moze im pristupiti samo ulogovani korisnik.</br>
 NAPOMENA: Korisnik nema pristup Public komponentama ukoliko je ulogovan.
+
+API: https://api.punkapi.com/v2
 
 
