@@ -26,6 +26,6 @@ Public - moze im pristupiti bilo ko.</br>
 Private - moze im pristupiti samo ulogovani korisnik.</br>
 NAPOMENA: Korisnik nema pristup Public komponentama ukoliko je ulogovan.
 
-API: https://api.punkapi.com/v2
+API: https://api.punkapi.com/v2/beers
 
 
