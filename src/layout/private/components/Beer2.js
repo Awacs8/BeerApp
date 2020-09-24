@@ -6,7 +6,7 @@ const Beer2 = ({ beer }) => {
   const [visible, setVisible] = useState(true);
   let style = {};
   function hideMe() {
-    setVisible(false);
+    setVisible(false)
   }
   if (!visible) style.display = "none";
 
@@ -38,3 +38,5 @@ const Beer2 = ({ beer }) => {
   );
 };
 export default Beer2;
+
+
