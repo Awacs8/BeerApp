@@ -1,25 +1,24 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { isLogIn } from '../../services/auth_service';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { isLogIn } from "../../services/auth_service";
 
-const PublicRoute = ({component:Component, ...rest}) => {
-    return (
-    <Route {...rest} render={props => (
-        isLogIn() ?
-        <Redirect to="/main"/> :
-        <Component {...props} />
-    )} />
-);  
-}; 
-    
-export default PublicRoute
+const PublicRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        isLogIn() ? <Redirect to="/main" /> : <Component {...props} />
+      }
+    />
+  );
+};
 
-
+export default PublicRoute;
 
 // return (
-//     <Route>{isLogIn() ? 
+//     <Route>{isLogIn() ?
 //     <Redirect to="/"/>:
-//     <Component {...rest} /> 
+//     <Component {...rest} />
 // }
 //     </Route>
 //   );

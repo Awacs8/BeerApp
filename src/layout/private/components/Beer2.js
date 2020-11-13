@@ -4,15 +4,15 @@ import "../../../utils/check.css";
 
 const Beer2 = ({ beer }) => {
   const [visible, setVisible] = useState(true);
-  let style = {};
-  function hideMe() {
-    setVisible(false)
-  }
-  if (!visible) style.display = "none";
 
   return (
     <>
-      <div className="item2" style={style}>
+      <div
+        className="item2"
+        style={{
+          opacity: visible ? " 0.936" : "0.636",
+        }}
+      >
         <h1 className="h2">{beer.name}</h1>
         <p>
           <b>{beer.tagline}</b>
@@ -30,7 +30,7 @@ const Beer2 = ({ beer }) => {
         </p>
         <label className="container">
           Tasted
-          <input type="checkbox" onClick={hideMe} />
+          <input type="checkbox" onChange={() => setVisible(!visible)} />
           <span className="checkmark"></span>
         </label>
       </div>
@@ -38,5 +38,3 @@ const Beer2 = ({ beer }) => {
   );
 };
 export default Beer2;
-
-

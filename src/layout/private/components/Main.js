@@ -1,57 +1,34 @@
-import React, {useEffect, useState} from 'react';
-import { getBeer } from '../../../services/api_service';
-import BeerList from './BeerList';
-import Pagination from '../../../utils/Pagination';
-import {LogOut} from './LogOut';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { getBeer } from "../../../services/api_service";
+import BeerList from "./BeerList";
+import Pagination from "../../../utils/Pagination";
 
+const Main = ({ setWishlist }) => {
+  const [beers, setBeers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(6);
 
-const Main=({setWishlist})=> {
-    const [beers,setBeers]=useState([]);
-    const [currentPage,setCurrentPage]=useState(1);
-    const [itemsPerPage]=useState(6);
+  useEffect(() => {
+    getBeer().then((data) => setBeers(data));
+  }, []);
 
-  useEffect(()=>{
-    getBeer().then(data=>
-        setBeers(data))    
-  },[])
-
-const indexOfLastItem=currentPage*itemsPerPage;
-const indexOfFirtstItem=indexOfLastItem-itemsPerPage;
-const currentList=beers.slice(indexOfFirtstItem,indexOfLastItem);
-const paginate=(pageNumber)=>{
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
+  const currentList = beers.slice(indexOfFirtstItem, indexOfLastItem);
+  const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-  }
+  };
 
   return (
     <div className="main">
-    <div>
-    <ul className="nav-bar">
-      <li>
-        <LogOut />
-      </li>
-      <li className="nav-item">
-        <Link  to="welcome">Home</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/wishlist">Wishlist</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/search">Search</Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/profile">Profile</Link>
-      </li>
-    </ul>
+      <BeerList beers={currentList} setWishlist={setWishlist} />
+      <Pagination
+        paginate={paginate}
+        totalItems={beers.length}
+        itemsPerPage={itemsPerPage}
+      />
     </div>
-      <BeerList beers={currentList} setWishlist={setWishlist}/>
-      <Pagination 
-        paginate={paginate} 
-        totalItems={beers.length} 
-        itemsPerPage={itemsPerPage} 
-      /> 
-    </div>
-  );  
+  );
 };
 
 export default Main;

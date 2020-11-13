@@ -1,19 +1,28 @@
 import React from "react";
-import '../../../utils/style.css';
-import icon from '../../../utils/img/icon.png'
-
+import "../../../utils/style.css";
+import icon from "../../../utils/img/icon.png";
 
 const User = ({ user }) => {
   return (
     <div className="profile">
       <div></div>
       <div>
-        <label><b>Username: </b>{user.username}</label><br/>
+        <label>
+          <b>Username: </b>
+          {user.username}
+        </label>
+        <br />
         <div>
-          <img src={icon} className="image" alt="logo"/>
+          <img src={icon} className="image" alt="logo" />
         </div>
-        <label><b>Name: </b>{user.name} {user.surname}</label><br/>
-        <label><b>Email:</b> {user.email}</label>
+        <label>
+          <b>Name: </b>
+          {user.name} {user.surname}
+        </label>
+        <br />
+        <label>
+          <b>Email:</b> {user.email}
+        </label>
       </div>
     </div>
   );
