@@ -1,10 +1,11 @@
 import React from "react";
 import "../../../utils/style.css";
+import logo from "../../../utils/img/brewdog-logo.png";
 
 const Header = () => {
   return (
     <div className="header">
-      <h1>MY BREWDOG APP</h1>
+      <img src={logo} alt="logo" />
     </div>
   );
 };

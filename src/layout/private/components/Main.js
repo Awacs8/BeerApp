@@ -6,7 +6,7 @@ import Pagination from "../../../utils/Pagination";
 const Main = ({ setWishlist }) => {
   const [beers, setBeers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(6);
+  const [itemsPerPage] = useState(3);
 
   useEffect(() => {
     getBeer().then((data) => setBeers(data));

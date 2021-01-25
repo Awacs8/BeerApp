@@ -24,39 +24,41 @@ export const LogIn = () => {
   };
 
   return (
-    <div className="form">
-      <p className="p">Login to see content:</p>
-      <label className="label">Username:</label>
-      <br />
-      <input
-        className="input"
-        type="text"
-        onInput={(e) => {
-          e.preventDefault();
-          setUsername(e.target.value);
-        }}
-      />
-      <br />
-      <label className="label">Password:</label>
-      <br />
-      <input
-        className="input"
-        type="password"
-        onInput={(e) => {
-          e.preventDefault();
-          setPassword(e.target.value);
-        }}
-      />
-      <br />
-      <p>{`${error}`}</p>
-      <button onClick={handleClick} className="button">
-        LogIn
-      </button>
-      <br />
-      <p className="p">Don't have acoount?</p>
-      <Link to="register" className="button">
-        SignUp
-      </Link>
+    <div className="form-container">
+      <div className="form">
+        <p className="p">Login to see content:</p>
+        <label className="label">Username:</label>
+        <br />
+        <input
+          className="input"
+          type="text"
+          onInput={(e) => {
+            e.preventDefault();
+            setUsername(e.target.value);
+          }}
+        />
+        <br />
+        <label className="label">Password:</label>
+        <br />
+        <input
+          className="input"
+          type="password"
+          onInput={(e) => {
+            e.preventDefault();
+            setPassword(e.target.value);
+          }}
+        />
+        <br />
+        <p>{`${error}`}</p>
+        <button onClick={handleClick} className="button">
+          LogIn
+        </button>
+        <br />
+        <p className="p">Don't have account?</p>
+        <Link to="register" className="button">
+          SignUp
+        </Link>
+      </div>
     </div>
   );
 };

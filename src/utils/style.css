@@ -1,14 +1,12 @@
 .header {
   width: 100%;
   height: 150px;
-  padding-top: 10px;
-  color: rgb(209, 27, 27);
-  letter-spacing: 3px;
-  word-spacing: 10px;
-  text-shadow: 2px 5px 5px rgba(255, 217, 0, 0.932);
   text-align: center;
-  font-size: 20px;
-  background-color: rgba(226, 127, 14, 0.856);
+  background-color: rgba(243, 227, 7, 0.452);
+}
+.header > img {
+  height: 150px;
+  width: 400px;
 }
 
 /* pagination */
@@ -17,14 +15,39 @@
 }
 .pagination button {
   color: rgb(19, 8, 2);
-  background-color: orange;
+  background-color: rgba(255, 166, 0, 0.719);
   font-weight: bold;
   float: left;
   padding: 8px 16px;
 }
-
 .pagination button:hover {
   background-color: rgba(64, 228, 23, 0.726);
+}
+
+/* CAROUSEL */
+
+.rec.rec-arrow {
+  border-radius: 50%;
+}
+.rec.rec-arrow:focus:enabled {
+  background-color: rgba(64, 228, 23, 0.274);
+}
+.rec.rec-arrow:hover:enabled {
+  background-color: rgba(64, 228, 23, 0.726);
+}
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+.rec.rec-dot_active {
+  border-radius: 0%;
+  background-color: rgba(232, 243, 229, 0);
+  box-shadow: 0 0 1px 3px rgba(64, 228, 23, 0.726);
+}
+.rec.rec-dot_active:focus {
+  box-shadow: 0 0 1px 3px rgba(64, 228, 23, 0.726);
+}
+.rec.rec-dot:hover {
+  box-shadow: 0 0 1px 3px rgba(64, 228, 23, 0.445);
 }
 
 /* beerList */
@@ -36,6 +59,8 @@
   background-color: rgba(102, 77, 15, 0.836);
 }
 .item2 {
+  width: 300px;
+  height: 300px;
   border: darkgreen 3px solid;
   border-radius: 6px;
   margin: 20px;
@@ -61,29 +86,29 @@
   display: grid;
   grid-template-columns: 30% 30% 30%;
   border: firebrick 3px solid;
+  min-height: 30vw;
 }
 
 /* navigation,links */
 .nav-bar {
+  width: 100%;
   text-align: center;
-  width: 80%;
-  margin-left: 10%;
+  height: 150px;
   list-style-type: none;
+  background-image: url("nav-logo.jpg");
 }
 .nav-item {
-  padding: 5px;
-  margin: 5px;
-  display: inline-flex;
+  margin-top: 30px;
+  padding: 10px;
+  display: inline;
   border: orangered 3px solid;
   border-radius: 5px;
   text-align: center;
   font-size: 20px;
-  color: darkred;
-  font-weight: 500;
-  text-decoration: underline;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgba(255, 255, 0, 0.733);
+  background-color: rgba(247, 247, 63, 0.61);
 }
+
 #button {
   float: right;
   padding: 5px;
@@ -94,19 +119,46 @@
   color: rgb(49, 29, 29);
   font-weight: bold;
 }
+.btn-group {
+  margin-top: 30px;
+  text-align: center;
+}
+.btn-group > button {
+  padding: 10px;
+  margin: 10px;
+  border: orangered 3px solid;
+  background-color: rgba(247, 247, 63, 0.61);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: darkred;
+}
 
 /* textbox */
 .text {
-  margin-left: 25%;
-  width: 50%;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 20px;
+  width: 40%;
+  padding: 20px;
   border: orangered 3px solid;
+  border-radius: 5%;
   background-color: rgba(247, 247, 63, 0.61);
 }
 
 /* input,logIn,register */
+.form-container {
+  height: 50vw;
+  margin: 20px auto;
+}
 .form {
-  margin-left: 25%;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 20px;
   width: 50%;
   text-align: center;
   border: orangered 2px solid;
@@ -152,18 +204,18 @@
   text-align: center;
 }
 .home {
-  background-image: url("https://wallsdesk.com/wp-content/uploads/2016/10/Beer-HD-Wallpaper.jpg");
-  height: 80vh;
-  background-position: center;
+  height: 50vw;
 }
 .main {
-  background-image: url("https://www.wallpapers4u.org/wp-content/uploads/beer_bottles_three_cold_1433_1920x1080.jpg");
+  /* background-image: url("https://www.wallpapers4u.org/wp-content/uploads/beer_bottles_three_cold_1433_1920x1080.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   padding-top: 10px;
 }
+.wishlist {
+  min-height: 45vw;
+}
 .search {
-  background-image: url("https://www.arcgis.com/sharing/rest/content/items/cbe2b3319349402c8ea1e11ebeff1185/resources/1578316937202.jpeg?w=3117");
   height: 150vh;
 }
 
@@ -174,9 +226,7 @@
   .list-item {
     display: block;
   }
-  .h1 {
-    margin-left: 20%;
-  }
+
   .form {
     display: block;
   }

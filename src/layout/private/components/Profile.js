@@ -9,7 +9,7 @@ import icon from "../../../utils/img/icon.png";
 const Profile = () => {
   const [user, setUser] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(6);
+  const [itemsPerPage] = useState(3);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {

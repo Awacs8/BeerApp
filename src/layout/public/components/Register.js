@@ -53,58 +53,60 @@ export const Register = () => {
     }
   };
   return (
-    <div className="form">
-      <label className="label">FirstName:</label>
-      <br />
-      <input
-        className="input"
-        type="text"
-        onInput={(e) => setName(e.target.value)}
-      ></input>
-      <br />
-      <label className="label">LastName:</label>
-      <br />
-      <input
-        className="input"
-        type="text"
-        onInput={(e) => setSurname(e.target.value)}
-      ></input>
-      <br />
-      <label className="label">Email:</label>
-      <br />
-      <input
-        className="input"
-        type="email"
-        onInput={(e) => setEmail(e.target.value)}
-      ></input>
-      <br />
-      <label className="label">Username:</label>
-      <br />
-      <input
-        className="input"
-        type="text"
-        onInput={(e) => setUsername(e.target.value)}
-      ></input>
-      <br />
-      <label className="label">Password:</label>
-      <br />
-      <input
-        className="input"
-        type="password"
-        onInput={(e) => setPassword(e.target.value)}
-      ></input>
-      <br />
-      <label className="label">Confirm password:</label>
-      <br />
-      <input
-        className="input"
-        type="password"
-        onInput={(e) => setConfirmPass(e.target.value)}
-      ></input>
-      <br />
-      <button className="button" onClick={handleClick}>
-        SignUp
-      </button>
+    <div className="form-container">
+      <div className="form">
+        <label className="label">FirstName:</label>
+        <br />
+        <input
+          className="input"
+          type="text"
+          onInput={(e) => setName(e.target.value)}
+        ></input>
+        <br />
+        <label className="label">LastName:</label>
+        <br />
+        <input
+          className="input"
+          type="text"
+          onInput={(e) => setSurname(e.target.value)}
+        ></input>
+        <br />
+        <label className="label">Email:</label>
+        <br />
+        <input
+          className="input"
+          type="email"
+          onInput={(e) => setEmail(e.target.value)}
+        ></input>
+        <br />
+        <label className="label">Username:</label>
+        <br />
+        <input
+          className="input"
+          type="text"
+          onInput={(e) => setUsername(e.target.value)}
+        ></input>
+        <br />
+        <label className="label">Password:</label>
+        <br />
+        <input
+          className="input"
+          type="password"
+          onInput={(e) => setPassword(e.target.value)}
+        ></input>
+        <br />
+        <label className="label">Confirm password:</label>
+        <br />
+        <input
+          className="input"
+          type="password"
+          onInput={(e) => setConfirmPass(e.target.value)}
+        ></input>
+        <br />
+        <button className="button" onClick={handleClick}>
+          SignUp
+        </button>
+      </div>
     </div>
   );
 };
