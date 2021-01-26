@@ -9,7 +9,7 @@ const Wishlist = ({ wishlist2 }) => {
   return (
     <div className="wishlist">
       <h1 className="h3">Wishlist</h1>
-      <Carousel itemsToShow={2}>
+      <Carousel itemsToShow={1}>
         {filtered.map((beer) => (
           <Beer2 beer={beer} key={beer.id} />
         ))}

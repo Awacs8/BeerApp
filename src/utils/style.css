@@ -60,12 +60,15 @@
 }
 .item2 {
   width: 300px;
-  height: 300px;
+  height: 350px;
   border: darkgreen 3px solid;
   border-radius: 6px;
   margin: 20px;
   color: rgb(233, 167, 81);
   background-color: rgba(102, 77, 15, 0.836);
+}
+.item2 > p {
+  margin: 10px auto;
 }
 .profile {
   border: darkgreen 3px solid;
@@ -73,8 +76,8 @@
   width: 300px;
   margin: 20px;
   font-size: 20px;
-  color: rgb(182, 89, 35);
-  background-color: rgba(21, 134, 187, 0.404);
+  color: rgb(39, 37, 36);
+  background-color: rgba(21, 134, 187, 0.479);
   text-align: center;
 }
 .image {
@@ -84,7 +87,7 @@
 }
 .list-item {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 1fr 1fr 1fr;
   border: firebrick 3px solid;
   min-height: 30vw;
 }
@@ -120,7 +123,7 @@
   font-weight: bold;
 }
 .btn-group {
-  margin-top: 30px;
+  margin: 30px auto;
   text-align: center;
 }
 .btn-group > button {
@@ -216,25 +219,78 @@ a {
   min-height: 45vw;
 }
 .search {
-  height: 150vh;
+  height: auto;
 }
 
 @media only screen and (max-width: 600px) {
   body {
     background-color: rgba(255, 140, 0, 0.856);
+    height: auto;
+  }
+  .home {
+    height: auto;
+  }
+  .header > img {
+    height: 130px;
+    width: 80%;
+  }
+  .text {
+    margin: 60px auto;
+    font-size: 20px;
+    width: 60%;
+    padding: 20px;
+    text-align: left;
   }
   .list-item {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
   }
-
+  .form-container {
+    height: auto;
+    margin: 80px auto;
+  }
   .form {
     display: block;
+    width: 70%;
+    height: max-content;
+  }
+  .input {
+    width: 90%;
+  }
+  .item2 {
+    height: max-content;
+  }
+  .wishlist {
+    min-height: 100vw;
+  }
+  .nav-item {
+    margin-top: 30px;
+    padding: 3px;
+    display: inline;
+    font-size: 15px;
+    border: orangered 1px solid;
+  }
+  .profile {
+    width: auto;
+    color: rgb(27, 25, 23);
+    background-color: rgba(21, 134, 187, 0.521);
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 600px) {
+  .home {
+    height: 80vw;
+  }
   .list-item {
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 1fr 1fr;
     border: firebrick 3px solid;
+  }
+  .search {
+    height: auto;
+  }
+  .profile {
+    width: 250px;
+    color: rgb(27, 25, 23);
+    background-color: rgba(21, 134, 187, 0.521);
   }
 }

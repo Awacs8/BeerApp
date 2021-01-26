@@ -55,9 +55,9 @@ export const LogIn = () => {
         </button>
         <br />
         <p className="p">Don't have account?</p>
-        <Link to="register" className="button">
-          SignUp
-        </Link>
+        <button className="button">
+          <Link to="register">SignUp</Link>
+        </button>
       </div>
     </div>
   );

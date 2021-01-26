@@ -35,7 +35,7 @@ const Profile = () => {
   return (
     <div>
       <div className="profile">
-        <h2>{user.username} profile</h2>
+        <h2>{user.username}'s profile</h2>
         <div>
           <img src={icon} className="image" alt="logo" />
         </div>
