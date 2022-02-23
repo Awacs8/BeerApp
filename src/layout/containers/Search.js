@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Beer from "./Beer";
-import { getBeer } from "../../../services/api_service";
-import Pagination from "../../../utils/Pagination";
+import Beer from "../components/Beer";
+import { getBeer } from "../../services/api_service";
+import Pagination from "../../utils/Pagination";
 
-const Search = ({ setWishlist }) => {
+const Search = ({ handleClick }) => {
   const [findBeer, setFindBeer] = useState([]);
-  const [pomocni, setPomocni] = useState([]);
+  const [tmp, setTmp] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(3);
 
   useEffect(() => {
     getBeer().then((data) => {
-      setPomocni(data);
+      setTmp(data);
     });
   }, []);
 
@@ -20,10 +20,10 @@ const Search = ({ setWishlist }) => {
       setFindBeer([]);
       return;
     }
-    let tmp = pomocni.filter((beer) =>
+    let find = tmp.filter((beer) =>
       beer.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
-    setFindBeer(tmp);
+    setFindBeer(find);
     return;
   };
 
@@ -41,7 +41,7 @@ const Search = ({ setWishlist }) => {
       <h3 className="h3">Search results</h3>
       <div className="list-item">
         {currentList.map((beer) => (
-          <Beer beer={beer} setWishlist={setWishlist} key={beer.id} />
+          <Beer beer={beer} key={beer.id} handleClick={handleClick} />
         ))}
       </div>
       <Pagination

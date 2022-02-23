@@ -1,6 +1,5 @@
 import React from "react";
-import "../../../utils/style.css";
-import logo from "../../../utils/img/brewdog-logo.png";
+import logo from "../../utils/img/brewdog-logo.png";
 
 const Header = () => {
   return (

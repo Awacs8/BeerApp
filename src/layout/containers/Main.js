@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getBeer } from "../../../services/api_service";
-import BeerList from "./BeerList";
-import Pagination from "../../../utils/Pagination";
+import { getBeer } from "../../services/api_service";
+import BeerList from "../components/BeerList";
+import Pagination from "../../utils/Pagination";
 
-const Main = ({ setWishlist }) => {
+const Main = ({ handleClick }) => {
   const [beers, setBeers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(3);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     getBeer().then((data) => setBeers(data));
@@ -21,7 +21,7 @@ const Main = ({ setWishlist }) => {
 
   return (
     <div className="main">
-      <BeerList beers={currentList} setWishlist={setWishlist} />
+      <BeerList beers={currentList} handleClick={handleClick} />
       <Pagination
         paginate={paginate}
         totalItems={beers.length}

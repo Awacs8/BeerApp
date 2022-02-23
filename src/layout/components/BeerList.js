@@ -1,14 +1,13 @@
 import React from "react";
 import Beer from "./Beer";
-import "../../../utils/style.css";
 
-const BeerList = ({ beers, setWishlist }) => {
+const BeerList = ({ beers, handleClick }) => {
   return (
-    <div>
+    <div className="main">
       <h1 className="h3">BeerList</h1>
       <div className="list-item">
         {beers.map((beer) => (
-          <Beer beer={beer} setWishlist={setWishlist} key={beer.id} />
+          <Beer beer={beer} handleClick={handleClick} key={beer.id} />
         ))}
       </div>
     </div>

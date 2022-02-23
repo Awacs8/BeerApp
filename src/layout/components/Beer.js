@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import "../../../utils/style.css";
-import "../../../utils/check.css";
+import "../../utils/check.css";
 
-const Beer = ({ beer, setWishlist }) => {
+const Beer = ({ beer, handleClick }) => {
   const [checked, setChecked] = useState(false);
   const [more, setMore] = useState(false);
 
-  const Wish = () => {
-    setWishlist((wishlist2) => [...wishlist2, beer]);
-  };
   const seeMore = () => {
     setMore(!more);
   };
@@ -49,7 +45,7 @@ const Beer = ({ beer, setWishlist }) => {
           <span className="checkmark"></span>
         </label>
         <div>
-          <button className="button" onClick={Wish}>
+          <button className="button" onClick={() => handleClick(beer)}>
             Add to wishlist
           </button>
         </div>

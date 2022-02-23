@@ -1,5 +1,4 @@
 import React from "react";
-import { LogOut } from "./LogOut";
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
@@ -14,10 +13,6 @@ export const NavBar = () => {
       <button className="nav-item">
         <Link to="/search">Search</Link>
       </button>
-      <button className="nav-item">
-        <Link to="/profile">Profile</Link>
-      </button>
-      <LogOut />
     </div>
   );
 };

@@ -1,52 +1,43 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
 import "./App.css";
-import Header from "./layout/public/components/Header";
-import Home from "./layout/public/components/Home";
-import { Register } from "./layout/public/components/Register";
-import { LogIn } from "./layout/public/components/LogIn";
-import { LogOut } from "./layout/private/components/LogOut";
-import Main from "./layout/private/components/Main";
-import PublicRoute from "./layout/public/PublicRoute";
-import PrivateRoute from "./layout/private/PrivateRoute";
-import Search from "./layout/private/components/Search";
-import Profile from "./layout/private/components/Profile";
-import Wishlist from "./layout/private/components/Wishlist";
-import { NavBar } from "./layout/private/components/NavBar";
-import { isLogIn } from "./services/auth_service";
+import Header from "./layout/containers/Header";
+import Main from "./layout/containers/Main";
+import Search from "./layout/containers/Search";
+import Wishlist from "./layout/containers/Wishlist";
+import { NavBar } from "./layout/components/NavBar";
 
 function App() {
-  const [wishlist2, setWishlist] = useState([]);
-  useEffect(() => {
-    console.log(wishlist2);
-  }, [wishlist2]);
+  const [wishlist, setWishlist] = useState([]);
 
+  useEffect(() => {
+    console.log(wishlist);
+  }, [wishlist]);
+
+  const handleClick = (beer) => {
+    const tmp = [...wishlist, beer];
+    setWishlist(tmp);
+  };
   return (
     <>
       <Router>
         <Header />
-        {isLogIn() && <NavBar />}
+        <NavBar />
         <Switch>
-          <PublicRoute component={Home} exact path="/" />
-          <PublicRoute component={Register} path="/register" />
-          <PublicRoute component={LogIn} path="/login" />
-          <PrivateRoute
-            component={Main}
-            setWishlist={setWishlist}
-            path="/main"
-          />
-          <PrivateRoute
-            component={Search}
-            setWishlist={setWishlist}
-            path="/search"
-          />
-          <PrivateRoute
-            component={Wishlist}
-            wishlist2={wishlist2}
-            path="/wishlist"
-          />
-          <PrivateRoute component={Profile} path="/profile" />
-          <PrivateRoute component={LogOut} path="/logout" />
+          <Route path="/main">
+            <Main handleClick={handleClick} />
+          </Route>
+          <Route path="/search">
+            <Search handleClick={handleClick} />
+          </Route>
+          <Route path="/wishlist">
+            <Wishlist wishlist={wishlist} />
+          </Route>
           <Redirect from="/" to="/main" />
         </Switch>
       </Router>

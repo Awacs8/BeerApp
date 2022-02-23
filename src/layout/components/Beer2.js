@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../../../utils/style.css";
-import "../../../utils/check.css";
+import "../../utils/check.css";
 
 const Beer2 = ({ beer }) => {
   const [visible, setVisible] = useState(true);
